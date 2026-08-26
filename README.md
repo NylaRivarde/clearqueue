@@ -1,3 +1,9 @@
+<div align="center">
+  <img src="assets/banner.svg" alt="Underwriter360 — Commercial Property Underwriting Workflow, a Business Analysis and Product case study" width="100%" />
+</div>
+
+<br>
+
 # Underwriter360
 
 **A workflow visibility and prioritization concept for commercial property underwriting, built as a Business Analyst / Product portfolio case study.**
