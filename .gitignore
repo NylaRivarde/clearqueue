@@ -1,0 +1,11 @@
+# OS / editor artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Word/Office lock files
+~$*.md
+~$*.docx
+
+# Temp files
+*.tmp

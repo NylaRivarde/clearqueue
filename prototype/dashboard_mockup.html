@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Underwriter360 — Dashboard Wireframe</title>
+<style>
+  :root{
+    --surface-1:#fcfcfb;
+    --page:#f2f1ee;
+    --ink:#0b0b0b;
+    --ink-2:#52514e;
+    --ink-muted:#898781;
+    --hairline:#e1e0d9;
+    --border:rgba(11,11,11,0.10);
+    --brand:#184f95;
+    --brand-2:#2a78d6;
+
+    --good:#0ca30c;      --good-tint:#e6f6e6;
+    --warning:#c98500;   --warning-tint:#fdf1d9;
+    --critical:#d03b3b;  --critical-tint:#fbe6e6;
+    --neutral-tint:#eeede9;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--page);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+  }
+  .app{
+    max-width:1480px;
+    margin:0 auto;
+    padding:26px 32px 56px;
+  }
+
+  /* Header */
+  .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;}
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand .mark{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg, var(--brand-2), var(--brand));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;}
+  .brand .name{font-size:19px;font-weight:700;letter-spacing:-0.01em;}
+  .brand .tagline{font-size:12px;color:var(--ink-muted);margin-top:1px;}
+  .topbar-right{display:flex;align-items:center;gap:16px;}
+  .refresh{font-size:12px;color:var(--ink-muted);text-align:right;}
+  .refresh .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--good);margin-right:5px;}
+  .user-chip{display:flex;align-items:center;gap:8px;background:var(--surface-1);border:1px solid var(--border);border-radius:999px;padding:6px 14px 6px 6px;font-size:13px;}
+  .user-chip .avatar{width:24px;height:24px;border-radius:50%;background:#dbe6f5;color:var(--brand);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;}
+  .user-chip .role{color:var(--ink-muted);}
+
+  /* Tabs */
+  .tabs{display:flex;gap:4px;border-bottom:1px solid var(--hairline);margin-bottom:18px;}
+  .tab{padding:10px 16px;font-size:13px;font-weight:600;color:var(--ink-muted);border-bottom:2px solid transparent;cursor:default;}
+  .tab.active{color:var(--ink);border-bottom-color:var(--brand-2);}
+  .tab .soon{font-size:9.5px;font-weight:700;background:var(--neutral-tint);color:var(--ink-muted);padding:1px 6px;border-radius:999px;margin-left:6px;vertical-align:1px;}
+
+  /* KPI row */
+  .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px;}
+  .kpi{background:var(--surface-1);border:1px solid var(--border);border-radius:10px;padding:15px 18px;}
+  .kpi .label{font-size:11.5px;color:var(--ink-2);font-weight:600;margin-bottom:8px;display:flex;align-items:center;gap:6px;text-transform:uppercase;letter-spacing:.03em;}
+  .kpi .value{font-size:27px;font-weight:700;letter-spacing:-0.01em;line-height:1;}
+  .kpi .sub{font-size:11.5px;color:var(--ink-muted);margin-top:6px;}
+  .kpi .sub.crit{color:var(--critical);font-weight:600;}
+  .kpi .icon{width:8px;height:8px;border-radius:50%;}
+  .icon.crit{background:var(--critical);} .icon.warn{background:var(--warning);} .icon.good{background:var(--good);} .icon.info{background:var(--brand-2);}
+
+  .layout{display:grid;grid-template-columns:2fr 1fr;gap:16px;align-items:start;}
+
+  .panel{background:var(--surface-1);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+  .panel-head{padding:13px 18px;border-bottom:1px solid var(--hairline);display:flex;align-items:center;justify-content:space-between;}
+  .panel-head h2{font-size:14px;margin:0;font-weight:700;}
+  .panel-head .hint{font-size:11px;color:var(--ink-muted);}
+
+  table{width:100%;border-collapse:collapse;font-size:12.5px;table-layout:fixed;}
+  col.c-score{width:64px;} col.c-acct{width:190px;} col.c-status{width:150px;}
+  col.c-days{width:54px;} col.c-why{width:auto;} col.c-next{width:170px;}
+  thead th{text-align:left;font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-muted);font-weight:700;padding:9px 12px;border-bottom:1px solid var(--hairline);white-space:nowrap;}
+  tbody td{padding:10px 12px;border-bottom:1px solid var(--hairline);vertical-align:top;}
+  tbody tr:last-child td{border-bottom:none;}
+  tbody tr:hover{background:#faf9f7;}
+
+  .score-chip{display:flex;flex-direction:column;align-items:flex-start;gap:3px;}
+  .score-num{font-size:17px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1;}
+  .score-tag{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;padding:1px 6px;border-radius:999px;}
+  .score-chip.high .score-num{color:#9c2222;} .score-chip.high .score-tag{background:var(--critical-tint);color:#9c2222;}
+  .score-chip.med .score-num{color:#8a5c00;} .score-chip.med .score-tag{background:var(--warning-tint);color:#8a5c00;}
+  .score-chip.low .score-num{color:#0a6b0a;} .score-chip.low .score-tag{background:var(--good-tint);color:#0a6b0a;}
+
+  .acct{font-weight:700;line-height:1.3;}
+  .occ{font-size:11px;color:var(--ink-muted);font-weight:400;margin-top:1px;}
+  .a360-link{display:inline-block;margin-top:5px;font-size:10.5px;font-weight:600;color:var(--brand);}
+  .sig-badge{display:inline-block;margin-top:4px;font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;padding:1px 7px;border-radius:999px;border:1px solid #c9d9ef;color:var(--brand);background:#f2f6fc;}
+
+  .status-pill{font-size:11px;color:var(--ink-2);background:var(--neutral-tint);padding:3px 8px;border-radius:6px;white-space:nowrap;display:inline-block;}
+  .days{font-variant-numeric:tabular-nums;font-weight:700;}
+
+  .why{color:var(--ink);font-weight:600;line-height:1.35;}
+  .next-owner{font-weight:700;font-size:11.5px;}
+  .next-action{color:var(--ink-2);font-size:11.5px;line-height:1.35;margin-top:2px;}
+
+  .side-stack{display:flex;flex-direction:column;gap:16px;}
+  .side-pad{padding:15px 18px;}
+  .bar-row{display:grid;grid-template-columns:82px 1fr 30px;align-items:center;gap:10px;margin-bottom:10px;font-size:11.5px;}
+  .bar-row:last-child{margin-bottom:0;}
+  .bar-track{position:relative;height:13px;background:var(--neutral-tint);border-radius:4px;overflow:hidden;display:flex;}
+  .bar-seg.high{background:var(--critical);} .bar-seg.rest{background:#c9d9ef;}
+  .bar-name{color:var(--ink-2);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .bar-total{font-variant-numeric:tabular-nums;font-weight:700;text-align:right;color:var(--ink-2);}
+  .legend-row{display:flex;gap:14px;font-size:10.5px;color:var(--ink-muted);margin-top:11px;padding-top:11px;border-top:1px solid var(--hairline);}
+  .legend-row span{display:flex;align-items:center;gap:5px;}
+  .legend-row .sw{width:8px;height:8px;border-radius:2px;}
+
+  .renewal-item{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--hairline);font-size:12px;gap:8px;}
+  .renewal-item:last-child{border-bottom:none;}
+  .renewal-item .r-acct{font-weight:700;}
+  .renewal-item .r-lob{color:var(--ink-muted);font-size:10.5px;margin-top:1px;}
+  .renewal-item .r-flag{color:#8a5c00;font-size:10.5px;margin-top:3px;font-weight:600;}
+  .renewal-days{font-size:11px;font-weight:700;padding:3px 8px;border-radius:999px;background:var(--warning-tint);color:#8a5c00;white-space:nowrap;}
+
+  .score-model{font-size:11px;color:var(--ink-2);line-height:1.7;}
+  .score-model .row{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px dashed var(--hairline);}
+  .score-model .row:last-child{border-bottom:none;font-weight:700;color:var(--ink);}
+  .score-model .row span:first-child{color:var(--ink-2);}
+  .score-model .row span:last-child{font-variant-numeric:tabular-nums;font-weight:600;}
+
+  .footnote{margin-top:18px;font-size:11px;color:var(--ink-muted);line-height:1.6;}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <div class="topbar">
+    <div class="brand">
+      <div class="mark">U360</div>
+      <div>
+        <div class="name">Underwriter360</div>
+        <div class="tagline">What needs attention — and why.</div>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <div class="refresh"><span class="dot"></span>Data refreshed 12 min ago<br>Aug 17, 2026 · 7:02 AM</div>
+      <div class="user-chip"><span class="avatar">JA</span> J. Alvarez <span class="role">· Commercial Property Underwriter</span></div>
+    </div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active">My Attention Queue</div>
+    <div class="tab">Team View</div>
+    <div class="tab">Regional Roll-Up</div>
+    <div class="tab">Renewal Radar</div>
+    <div class="tab">Account 360 <span class="soon">concept</span></div>
+  </div>
+
+  <div class="kpi-row">
+    <div class="kpi">
+      <div class="label"><span class="icon info"></span>Open Items</div>
+      <div class="value">13</div>
+      <div class="sub">on your book</div>
+    </div>
+    <div class="kpi">
+      <div class="label"><span class="icon crit"></span>Needs Attention Today</div>
+      <div class="value">2</div>
+      <div class="sub crit">Attention Score 65+</div>
+    </div>
+    <div class="kpi">
+      <div class="label"><span class="icon warn"></span>Avg Attention Score</div>
+      <div class="value">43</div>
+      <div class="sub">of 100 · proposed model, right</div>
+    </div>
+    <div class="kpi">
+      <div class="label"><span class="icon info"></span>Renewals ≤ 30 Days</div>
+      <div class="value">3</div>
+      <div class="sub">see Renewal Radar</div>
+    </div>
+  </div>
+
+  <div class="layout">
+
+    <div class="panel">
+      <div class="panel-head">
+        <h2>My Attention Queue — ranked by Attention Score</h2>
+        <div class="hint">Workflow urgency only · account significance shown separately, never blended in</div>
+      </div>
+      <table>
+        <colgroup><col class="c-score"><col class="c-acct"><col class="c-status"><col class="c-days"><col class="c-why"><col class="c-next"></colgroup>
+        <thead><tr><th>Score</th><th>Account</th><th>Status</th><th>Days</th><th>Why It Needs Attention</th><th>Next Action</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><div class="score-chip high"><div class="score-num">87</div><div class="score-tag">High</div></div></td>
+            <td><div class="acct">Grandview Hospitality Group<div class="occ">Manufacturing/Industrial</div></div><a class="a360-link">Account 360 →</a></td>
+            <td><span class="status-pill">On Hold – Missing Info</span></td>
+            <td class="days">23</td>
+            <td class="why">Overdue vs. target issuance date</td>
+            <td><div class="next-owner">Broker/Agent</div><div class="next-action">Request wind mitigation inspection report for credit eligibility</div></td>
+          </tr>
+          <tr>
+            <td><div class="score-chip high"><div class="score-num">77</div><div class="score-tag">High</div></div></td>
+            <td><div class="acct">Ironwood Industries<div class="occ">Warehouse &amp; Distribution</div></div><a class="a360-link">Account 360 →</a></td>
+            <td><span class="status-pill">Bound – Pending Issuance</span></td>
+            <td class="days">36</td>
+            <td class="why">Hard blocker: elevation certificate needed (flood zone)</td>
+            <td><div class="next-owner">Broker/Agent</div><div class="next-action">Request elevation certificate from insured/broker</div></td>
+          </tr>
+          <tr>
+            <td><div class="score-chip med"><div class="score-num">60</div><div class="score-tag">Medium</div></div></td>
+            <td><div class="acct">Summit Logistics Center<div class="occ">Self-Storage</div><span class="sig-badge">Significant Account</span></div><a class="a360-link">Account 360 →</a></td>
+            <td><span class="status-pill">Bound – Pending Issuance</span></td>
+            <td class="days">33</td>
+            <td class="why">Target issuance date due within 5 days</td>
+            <td><div class="next-owner">Underwriting Asst.</div><div class="next-action">Route to issuance / complete policy documents</div></td>
+          </tr>
+          <tr>
+            <td><div class="score-chip med"><div class="score-num">50</div><div class="score-tag">Medium</div></div></td>
+            <td><div class="acct">Cedarpoint Hospitality Group<div class="occ">Manufacturing/Industrial</div><span class="sig-badge">Significant Account</span></div><a class="a360-link">Account 360 →</a></td>
+            <td><span class="status-pill">Bound – Pending Issuance</span></td>
+            <td class="days">31</td>
+            <td class="why">Aged 30+ days outstanding</td>
+            <td><div class="next-owner">Underwriting Asst.</div><div class="next-action">Route to issuance / complete policy documents</div></td>
+          </tr>
+          <tr>
+            <td><div class="score-chip med"><div class="score-num">43</div><div class="score-tag">Medium</div></div></td>
+            <td><div class="acct">Summit Storage Solutions<div class="occ">Retail/Mercantile</div><span class="sig-badge">Significant Account</span></div><a class="a360-link">Account 360 →</a></td>
+            <td><span class="status-pill">Issuance In Progress</span></td>
+            <td class="days">7</td>
+            <td class="why">Hard blocker: wind mitigation report pending</td>
+            <td><div class="next-owner">Broker/Agent</div><div class="next-action">Request wind mitigation inspection report for credit eligibility</div></td>
+          </tr>
+          <tr>
+            <td><div class="score-chip med"><div class="score-num">43</div><div class="score-tag">Medium</div></div></td>
+            <td><div class="acct">Cascade Business Park<div class="occ">Retail/Mercantile</div></div><a class="a360-link">Account 360 →</a></td>
+            <td><span class="status-pill">In Underwriting Review</span></td>
+            <td class="days">10</td>
+            <td class="why">Hard blocker: 4-point inspection required (roof/HVAC/electrical/plumbing)</td>
+            <td><div class="next-owner">Loss Control/Inspector</div><div class="next-action">Order 4-point inspection; hold for results before binding</div></td>
+          </tr>
+          <tr>
+            <td><div class="score-chip med"><div class="score-num">37</div><div class="score-tag">Medium</div></div></td>
+            <td><div class="acct">Foxridge Hospitality Group<div class="occ">Warehouse &amp; Distribution</div></div><a class="a360-link">Account 360 →</a></td>
+            <td><span class="status-pill">Quoted – Awaiting Response</span></td>
+            <td class="days">14</td>
+            <td class="why">Target issuance date approaching</td>
+            <td><div class="next-owner">Broker/Agent</div><div class="next-action">Follow up with broker on quote decision</div></td>
+          </tr>
+          <tr>
+            <td><div class="score-chip med"><div class="score-num">35</div><div class="score-tag">Medium</div></div></td>
+            <td><div class="acct">Amber Valley Cold Storage<div class="occ">Retail/Mercantile</div></div><a class="a360-link">Account 360 →</a></td>
+            <td><span class="status-pill">In Underwriting Review</span></td>
+            <td class="days">9</td>
+            <td class="why">Target issuance date approaching</td>
+            <td><div class="next-owner">Underwriter</div><div class="next-action">Complete risk assessment and pricing</div></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="side-stack">
+
+      <div class="panel">
+        <div class="panel-head"><h2>How Attention Score Works</h2><div class="hint">Proposed v1 model</div></div>
+        <div class="side-pad score-model">
+          <div class="row"><span>Aging (days outstanding)</span><span>0–30 pts</span></div>
+          <div class="row"><span>Deadline pressure (vs. target date)</span><span>0–30 pts</span></div>
+          <div class="row"><span>Blocking item severity</span><span>0–25 pts</span></div>
+          <div class="row"><span>Who owns the next action</span><span>0–15 pts</span></div>
+          <div class="row"><span>Total → High ≥65 · Med 35–64 · Low &lt;35</span><span>0–100</span></div>
+          <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--hairline);color:var(--ink-muted);font-size:10.5px;line-height:1.5;">
+            Workflow signals only — account size (TIV) is intentionally excluded and shown as a separate "Significant Account" badge instead, so a large account can't outrank a smaller one that's genuinely more urgent. Weights are an initial hypothesis, not yet validated with underwriters. Full rationale: <code>attention_score_model.md</code>.
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><h2>Team Snapshot</h2><div class="hint">Manager view</div></div>
+        <div class="side-pad">
+          <div class="bar-row"><div class="bar-name">T. Novak</div><div class="bar-track"><div class="bar-seg high" style="width:41%"></div><div class="bar-seg rest" style="width:59%"></div></div><div class="bar-total">17</div></div>
+          <div class="bar-row"><div class="bar-name">L. Marquez</div><div class="bar-track"><div class="bar-seg high" style="width:12%"></div><div class="bar-seg rest" style="width:82%"></div></div><div class="bar-total">16</div></div>
+          <div class="bar-row"><div class="bar-name">J. Alvarez</div><div class="bar-track"><div class="bar-seg high" style="width:12%"></div><div class="bar-seg rest" style="width:65%"></div></div><div class="bar-total">13</div></div>
+          <div class="bar-row"><div class="bar-name">D. Whitfield</div><div class="bar-track"><div class="bar-seg high" style="width:35%"></div><div class="bar-seg rest" style="width:35%"></div></div><div class="bar-total">12</div></div>
+          <div class="bar-row"><div class="bar-name">M. Chen</div><div class="bar-track"><div class="bar-seg high" style="width:35%"></div><div class="bar-seg rest" style="width:29%"></div></div><div class="bar-total">11</div></div>
+          <div class="bar-row"><div class="bar-name">R. Okafor</div><div class="bar-track"><div class="bar-seg high" style="width:0%"></div><div class="bar-seg rest" style="width:47%"></div></div><div class="bar-total">8</div></div>
+          <div class="legend-row">
+            <span><span class="sw" style="background:var(--critical)"></span>High (score 65+)</span>
+            <span><span class="sw" style="background:#c9d9ef"></span>Medium / Low</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head"><h2>Renewal Radar</h2><div class="hint">Your book · next 30 days</div></div>
+        <div class="side-pad">
+          <div class="renewal-item"><div><div class="r-acct">Ironwood Industries</div><div class="r-lob">Warehouse &amp; Distribution</div><div class="r-flag">⚠ Also has an open blocker above</div></div><div class="renewal-days">7 days</div></div>
+          <div class="renewal-item"><div><div class="r-acct">Crestline Manufacturing</div><div class="r-lob">Warehouse &amp; Distribution</div></div><div class="renewal-days">15 days</div></div>
+          <div class="renewal-item"><div><div class="r-acct">Union Grove Plastics Inc.</div><div class="r-lob">Self-Storage</div></div><div class="renewal-days">24 days</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footnote">
+    Conceptual wireframe for the Underwriter360 portfolio case study. All accounts, names, and figures shown are synthetic demonstration data — see <code>/data/data_dictionary.md</code>. Attention Score model documented in <code>/analysis/attention_score_model.md</code>. Not a real product screenshot.
+  </div>
+
+</div>
+</body>
+</html>
