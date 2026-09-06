@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="assets/banner.svg" alt="Underwriter360 — Commercial Property Underwriting Workflow, a Business Analysis and Product case study" width="100%" />
+  <img src="assets/banner.png" alt="Underwriter360 — Commercial Property Underwriting, a Nyla Rivarde portfolio case study" width="100%" />
 </div>
 
 <br>
