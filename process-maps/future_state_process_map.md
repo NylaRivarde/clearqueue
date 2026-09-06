@@ -1,8 +1,8 @@
-# Future-State Workflow: Policy Issuance & Visibility with Underwriter360
+# Future-State Workflow: Policy Issuance & Visibility with ClearQueue
 
-This shows how the same transaction workflow could look if a consolidated visibility layer — Underwriter360 — sat on top of existing systems (Workbench, tracking spreadsheets, SharePoint, internal underwriting systems) instead of requiring people to manually reassemble status information.
+This shows how the same transaction workflow could look if a consolidated visibility layer — ClearQueue — sat on top of existing systems (Workbench, tracking spreadsheets, SharePoint, internal underwriting systems) instead of requiring people to manually reassemble status information.
 
-**Important:** The underlying issuance workflow itself does not change. Underwriter360 does not replace how business is quoted, bound, or issued — it replaces *how people find out what's happening* with that work. This is a visibility and workflow-awareness layer, not a new system of record.
+**Important:** The underlying issuance workflow itself does not change. ClearQueue does not replace how business is quoted, bound, or issued — it replaces *how people find out what's happening* with that work. This is a visibility and workflow-awareness layer, not a new system of record.
 
 ## Workflow
 
@@ -24,7 +24,7 @@ flowchart TD
     H == "outstanding item + next\naction owner captured once" ==> U360
     I == "closes the loop" ==> U360
 
-    subgraph U360["Underwriter360 — consolidated workspace"]
+    subgraph U360["ClearQueue — consolidated workspace"]
         direction TB
         W1["My Attention Queue:\nranked by Attention Score,\nwith the 'why' behind each rank"]
         W2["Team View (Manager):\noutstanding volume, aging,\nbottlenecks by UA/underwriter"]
@@ -33,14 +33,14 @@ flowchart TD
         W5["Account 360:\nfull risk + workflow context\nfor one selected account"]
     end
 
-    U360 --> V1["Underwriter opens Underwriter360:\nsees exactly what's outstanding\non their book, prioritized"]
+    U360 --> V1["Underwriter opens ClearQueue:\nsees exactly what's outstanding\non their book, prioritized"]
     U360 --> V2["Manager opens the same data,\nfiltered to their team —\nno manual pull required"]
     U360 --> V3["Regional leader sees a live\nroll-up instead of a periodic\nemailed spreadsheet"]
 ```
 
 ## What Changes vs. Current State
 
-| Current State | Future State with Underwriter360 |
+| Current State | Future State with ClearQueue |
 |---|---|
 | Underwriter asks the UA or checks multiple systems to learn status | Underwriter opens one queue view scoped to their own book |
 | Each UA tracks outstanding items their own way | Outstanding item + next-action owner captured in one shared, structured place |
@@ -50,8 +50,8 @@ flowchart TD
 
 ## What Does *Not* Change (Deliberately)
 
-- Underwriter360 is **not** a new policy administration or issuance system — issuance still happens in existing systems.
+- ClearQueue is **not** a new policy administration or issuance system — issuance still happens in existing systems.
 - It does **not** remove human judgment from underwriting decisions.
-- It does **not** assume every existing tool disappears — SharePoint, Workbench, and internal systems remain the systems of record; Underwriter360 is a consolidated *view* into their status.
+- It does **not** assume every existing tool disappears — SharePoint, Workbench, and internal systems remain the systems of record; ClearQueue is a consolidated *view* into their status.
 
 See the [Proposed Solution](../README.md#proposed-solution) and [Requirements Matrix](../requirements/requirements_matrix.md) for how these changes map to specific features.

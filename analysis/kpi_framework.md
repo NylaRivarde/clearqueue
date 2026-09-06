@@ -1,6 +1,6 @@
-# KPI Framework — Underwriter360
+# KPI Framework — ClearQueue
 
-Proposed success measures if Underwriter360 were actually implemented. **These are not real results.** This portfolio concept has not been built, piloted, or measured — there is no employer data, no adoption rate, and no before/after comparison behind any number here. What follows is a framework for *how* the product's impact would be evaluated, not a report of impact that occurred.
+Proposed success measures if ClearQueue were actually implemented. **These are not real results.** This portfolio concept has not been built, piloted, or measured — there is no employer data, no adoption rate, and no before/after comparison behind any number here. What follows is a framework for *how* the product's impact would be evaluated, not a report of impact that occurred.
 
 For each KPI: what it measures, why it matters, how it could be calculated, and what business question it answers.
 
@@ -63,5 +63,5 @@ For each KPI: what it measures, why it matters, how it could be calculated, and 
 ## What Is Deliberately Not Here
 
 - **Any productivity, cost-savings, or time-savings figure.** No such figure exists for this concept, and none is estimated here — see the truthfulness note at the top of this file and in [README.md](../README.md).
-- **Loss ratio, premium growth, or retention metrics.** These are legitimate underwriting business outcomes, but Underwriter360 is a workflow visibility tool, not a pricing or risk-selection tool (see [Account 360 IA — What Underwriter360 Is Not](../prototype/account_360_ia.md#what-underwriter360-is-not)). Attributing loss-ratio movement to a visibility dashboard would overstate what this kind of tool can plausibly claim credit for.
+- **Loss ratio, premium growth, or retention metrics.** These are legitimate underwriting business outcomes, but ClearQueue is a workflow visibility tool, not a pricing or risk-selection tool (see [Account 360 IA — What ClearQueue Is Not](../prototype/account_360_ia.md#what-clearqueue-is-not)). Attributing loss-ratio movement to a visibility dashboard would overstate what this kind of tool can plausibly claim credit for.
 - **Adoption rate.** Genuinely important for a real rollout, but listed in [Risks & Constraints](../README.md#risks--constraints) as a risk to manage rather than a KPI to report before the product exists.

@@ -1,4 +1,4 @@
-# Product Roadmap — Underwriter360
+# Product Roadmap — ClearQueue
 
 A proposed phasing, not a committed plan — there is no team, budget, or timeline behind this roadmap. It exists to show how the MVP reasoning in [MVP Prioritization](../analysis/mvp_prioritization.md) would extend over time, and to be explicit about what's deferred and why.
 
@@ -40,4 +40,4 @@ Ideas that are plausible extensions but are intentionally not designed yet, beca
 - Broker-level performance or responsiveness signals feeding into prioritization
 - Any proactive/predictive capability (e.g., flagging accounts likely to become blocked before they are)
 
-**What stays constant across every phase:** Underwriter360 remains a workflow visibility and prioritization layer on top of existing systems of record — not a policy administration system, not a risk-selection or pricing tool. See [Account 360 IA — What Underwriter360 Is Not](../prototype/account_360_ia.md#what-underwriter360-is-not).
+**What stays constant across every phase:** ClearQueue remains a workflow visibility and prioritization layer on top of existing systems of record — not a policy administration system, not a risk-selection or pricing tool. See [Account 360 IA — What ClearQueue Is Not](../prototype/account_360_ia.md#what-clearqueue-is-not).

@@ -1,14 +1,14 @@
 <div align="center">
-  <img src="assets/banner.png" alt="Underwriter360 — Commercial Property Underwriting, a Nyla Rivarde portfolio case study" width="100%" />
+  <img src="assets/banner.png" alt="ClearQueue — Commercial Property Underwriting, a Nyla Rivarde portfolio case study" width="100%" />
 </div>
 
 <br>
 
-# Underwriter360
+# ClearQueue
 
 **A workflow visibility and prioritization concept for commercial property underwriting, built as a Business Analyst / Product portfolio case study.**
 
-> Fragmented underwriting workflows make it hard to know what needs attention. Underwriter360 consolidates workflow signals into a prioritized attention queue, explains *why* an item is ranked, names who owns the next action, and offers a deeper account view when you need it.
+> Fragmented underwriting workflows make it hard to know what needs attention. ClearQueue consolidates workflow signals into a prioritized attention queue, explains *why* an item is ranked, names who owns the next action, and offers a deeper account view when you need it.
 
 This is a proposed concept, not a shipped product. I designed it independently, drawing on my own experience in commercial underwriting operations — it was never built or piloted at an employer, and there's no usage data or ROI to report. Everything here — the data, requirements, dashboard, and scoring model — is my own analysis for this portfolio. Where something below is a design assumption rather than an observed fact, I've said so, most explicitly in the [Attention Score Model](analysis/attention_score_model.md).
 
@@ -24,7 +24,7 @@ I'm an underwriting professional finishing an MBA (Data Analytics focus) and mov
 
 Underwriters need to know what's outstanding on their book and what needs attention. That used to be visible through a tracker; as tools and processes evolved and issuance execution shifted to Underwriting Assistants, that visibility fragmented.
 
-**The two halves of the lifecycle matter here.** While an underwriter is reviewing and quoting a risk, they own that work and can see it fine — no fragmentation problem there. The problem starts **after bind**, once a policy moves into UA-managed issuance: status now lives in the UA's own tracking method, and any team- or region-level view means a manager manually rebuilding an Excel summary. Underwriter360's queue includes both stages for a single-pane-of-glass view, but the pain it's solving is specifically the post-bind handoff.
+**The two halves of the lifecycle matter here.** While an underwriter is reviewing and quoting a risk, they own that work and can see it fine — no fragmentation problem there. The problem starts **after bind**, once a policy moves into UA-managed issuance: status now lives in the UA's own tracking method, and any team- or region-level view means a manager manually rebuilding an Excel summary. ClearQueue's queue includes both stages for a single-pane-of-glass view, but the pain it's solving is specifically the post-bind handoff.
 
 The tools to fix this already exist — Power BI, Excel, SharePoint, underwriting workbenches. The gap isn't technology. It's that no single view answers *what needs attention, why, and who owns the next step* without someone reassembling it by hand.
 
@@ -56,7 +56,7 @@ Worth flagging: **every prioritization signal has to be explainable, not a black
 
 ## Proposed Solution
 
-Underwriter360 sits on top of existing systems — it doesn't replace them. Two levels of information, matched to two different jobs:
+ClearQueue sits on top of existing systems — it doesn't replace them. Two levels of information, matched to two different jobs:
 
 | Screen | Job |
 |---|---|
@@ -71,7 +71,7 @@ Future-state diagram: [future_state_process_map.md](process-maps/future_state_pr
 
 **[Open the dashboard mockup](prototype/dashboard_mockup.html)** in a browser. It's scoped to one Commercial Property underwriter's queue, ranked by Attention Score — each item shows the score, a plain-language reason, status, days outstanding, and next action with owner. A "Significant Account" badge appears separately when relevant (see below for why it's not part of the score).
 
-Account 360 — the account-level drill-down the product is named for — is deliberately scoped as information architecture only at this stage, not a built screen: [account_360_ia.md](prototype/account_360_ia.md).
+Account 360 — the account-level drill-down concept — is deliberately scoped as information architecture only at this stage, not a built screen: [account_360_ia.md](prototype/account_360_ia.md).
 
 ## The Attention Score
 
@@ -113,7 +113,7 @@ Before this goes anywhere real: discovery interviews with actual underwriters/UA
 ## Repository Guide
 
 ```
-Underwriter360/
+ClearQueue/
 ├── README.md
 ├── data/         — synthetic dataset + data dictionary
 ├── requirements/ — requirements matrix + user stories

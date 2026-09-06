@@ -1,4 +1,4 @@
-# MVP Prioritization — Underwriter360
+# MVP Prioritization — ClearQueue
 
 Using **MoSCoW** (already applied per-requirement in the [Requirements Matrix](../requirements/requirements_matrix.md)), this document explains the *reasoning* behind what belongs in an MVP versus later phases — not just the label.
 
@@ -36,7 +36,7 @@ The MVP is scoped to answer one question well: ***what needs my attention today,
 | Capability | Why It's Explicitly Out |
 |---|---|
 | **Historical trending** (DR-03) | Requires a data retention/history strategy this concept hasn't designed. Point-in-time visibility solves the immediate problem; trending is a legitimate Phase 2 ask once the retention approach is deliberately designed rather than bolted on. |
-| **Any risk-selection, pricing, or underwriting-guideline feature** | Explicitly out of scope for the product as a whole, not just this version — see [Account 360 IA — What Underwriter360 Is Not](../prototype/account_360_ia.md#what-underwriter360-is-not). Adding these would change what kind of product this is. |
+| **Any risk-selection, pricing, or underwriting-guideline feature** | Explicitly out of scope for the product as a whole, not just this version — see [Account 360 IA — What ClearQueue Is Not](../prototype/account_360_ia.md#what-clearqueue-is-not). Adding these would change what kind of product this is. |
 | **Attention Score auto-tuning / machine learning** | The model is deliberately rule-based and transparent (see [Attention Score Model](attention_score_model.md)). Introducing ML would trade explainability — the entire point of the model — for a marginal accuracy gain that hasn't even been shown to be needed yet. |
 
 ## The One-Sentence Test

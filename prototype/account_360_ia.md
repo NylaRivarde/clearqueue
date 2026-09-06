@@ -1,12 +1,12 @@
 # Account 360 — Information Architecture (Concept)
 
-**Status:** Information architecture only. Not yet wired into the dashboard mockup beyond an entry-point link ("Account 360 →") on each queue row. Deliberately not designed as a full screen yet — see [Refine Underwriter360](../README.md) for why: the goal at this stage is to decide *what belongs here and why*, before designing pixels.
+**Status:** Information architecture only. Not yet wired into the dashboard mockup beyond an entry-point link ("Account 360 →") on each queue row. Deliberately not designed as a full screen yet — see [Refine ClearQueue](../README.md) for why: the goal at this stage is to decide *what belongs here and why*, before designing pixels.
 
 ## Why This Screen Exists — and Why the Product Is Named After It
 
 **My Attention Queue** answers "what needs my attention across my whole book?" It is intentionally thin — one row per account, just enough to triage.
 
-Once an underwriter clicks into a specific account, they need the opposite: everything relevant about *that one account*, assembled in one place, instead of pulled from the submission file, the SOV, an inspection report, prior correspondence, and the issuance tracker separately. That consolidation — one account, every system's worth of relevant status, one screen — is the "360" the product is named for. My Attention Queue is the triage layer; Account 360 is where the actual decision gets made.
+Once an underwriter clicks into a specific account, they need the opposite: everything relevant about *that one account*, assembled in one place, instead of pulled from the submission file, the SOV, an inspection report, prior correspondence, and the issuance tracker separately. That consolidation — one account, every system's worth of relevant status, one screen — is what "Account 360" means. My Attention Queue is the triage layer; Account 360 is where the actual decision gets made.
 
 ## Design Principle
 
@@ -16,7 +16,7 @@ Every section on this screen has to answer one of:
 3. What's blocking it and who owns the next move?
 4. What's coming up that I need to plan around?
 
-If a candidate field doesn't answer one of those four questions for *this specific account*, it doesn't belong on Account 360 — it either belongs in the source system of record, or it doesn't belong in Underwriter360 at all.
+If a candidate field doesn't answer one of those four questions for *this specific account*, it doesn't belong on Account 360 — it either belongs in the source system of record, or it doesn't belong in ClearQueue at all.
 
 ## Proposed Sections
 
@@ -44,13 +44,13 @@ Renewal date (if applicable) and how it relates to the current outstanding work 
 
 These were considered and set aside for this version — not rejected, just not justified yet without real user validation:
 
-- **Full document viewer** (SOV files, inspection reports, correspondence) — valuable, but a much larger integration problem than a status/visibility layer should take on first. Underwriter360 links out to the system of record rather than replacing it.
+- **Full document viewer** (SOV files, inspection reports, correspondence) — valuable, but a much larger integration problem than a status/visibility layer should take on first. ClearQueue links out to the system of record rather than replacing it.
 - **Loss history / prior term detail** — genuinely useful for renewals, but requires a data source this concept hasn't assumed access to. Flagged as a Phase 2 candidate in the [Roadmap](../roadmap/product_roadmap.md).
 - **Broker relationship / performance data** — interesting context, but out of scope until the core visibility problem is solved.
 
-## What Underwriter360 Is Not
+## What ClearQueue Is Not
 
-Because Account 360 surfaces COPE risk characteristics (construction, occupancy, protection, exposure), it's worth being explicit about a boundary: **Underwriter360 is not a risk-selection or pricing tool.** It does not score risk quality, recommend accept/decline decisions, calculate premium, or enforce underwriting guidelines. COPE fields appear here for exactly one reason — they give the underwriter enough context to recall *what this risk is* while acting on a workflow item, the same way glancing at a submission's cover sheet would. If a field doesn't serve that recall purpose, it doesn't belong here, no matter how standard it is in property underwriting generally. Every COPE field kept in the synthetic dataset was checked against this test — see the field-by-field reasoning in [data_dictionary.md](../data/data_dictionary.md).
+Because Account 360 surfaces COPE risk characteristics (construction, occupancy, protection, exposure), it's worth being explicit about a boundary: **ClearQueue is not a risk-selection or pricing tool.** It does not score risk quality, recommend accept/decline decisions, calculate premium, or enforce underwriting guidelines. COPE fields appear here for exactly one reason — they give the underwriter enough context to recall *what this risk is* while acting on a workflow item, the same way glancing at a submission's cover sheet would. If a field doesn't serve that recall purpose, it doesn't belong here, no matter how standard it is in property underwriting generally. Every COPE field kept in the synthetic dataset was checked against this test — see the field-by-field reasoning in [data_dictionary.md](../data/data_dictionary.md).
 
 ## Relationship to the Rest of the Product
 

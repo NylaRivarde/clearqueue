@@ -8,7 +8,7 @@
 
 ## Why Commercial Property Specifically
 
-Underwriter360's Version 1 concept is scoped to a **Commercial Property underwriter's** book of business, not commercial lines generally. Every record in this file is a Commercial Property submission or policy. The risk fields below (construction, occupancy, protection, exposure) reflect **COPE** — the standard framework property underwriters use to evaluate a risk — plus the property-specific workflow steps (four-point inspections, elevation certificates, wind mitigation reports) that actually drive delays in property issuance. See [Research & Source Log](../research/source_log.md) for the public sources behind these terms.
+ClearQueue's Version 1 concept is scoped to a **Commercial Property underwriter's** book of business, not commercial lines generally. Every record in this file is a Commercial Property submission or policy. The risk fields below (construction, occupancy, protection, exposure) reflect **COPE** — the standard framework property underwriters use to evaluate a risk — plus the property-specific workflow steps (four-point inspections, elevation certificates, wind mitigation reports) that actually drive delays in property issuance. See [Research & Source Log](../research/source_log.md) for the public sources behind these terms.
 
 ## Column Reference
 

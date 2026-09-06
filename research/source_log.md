@@ -15,7 +15,7 @@ Public sources used to establish industry context, underwriting terminology, and
 - **Deloitte Insights — "The future of insurance underwriting."** Used for industry context on operating-model modernization in underwriting.
   - [deloitte.com — future of insurance underwriting](https://www.deloitte.com/us/en/insights/industry/financial-services/future-of-insurance-underwriting.html)
 
-- **Decerto — "What Is an Underwriting Workbench? The 2026 Guide for U.S. P&C Carriers."** Used as background on how "workbench" tools are positioned in the industry, relevant to why Underwriter360 is framed as a visibility layer that complements rather than replaces existing systems like a workbench.
+- **Decerto — "What Is an Underwriting Workbench? The 2026 Guide for U.S. P&C Carriers."** Used as background on how "workbench" tools are positioned in the industry, relevant to why ClearQueue is framed as a visibility layer that complements rather than replaces existing systems like a workbench.
   - [decerto.com — underwriting workbench guide](https://www.decerto.com/us/post/what-is-an-underwriting-workbench)
 
 ## Commercial Lines Market Context
@@ -49,7 +49,7 @@ These sources ground the property-specific fields in the synthetic dataset, dash
 
 ## What These Sources Were *Not* Used For
 
-- No source above was used to justify any claim of productivity improvement, cost savings, or adoption outcome for Underwriter360 — this concept has no implementation and no measured results (see [README.md — My Role / Perspective](../README.md#my-role--perspective)).
+- No source above was used to justify any claim of productivity improvement, cost savings, or adoption outcome for ClearQueue — this concept has no implementation and no measured results (see [README.md — My Role / Perspective](../README.md#my-role--perspective)).
 - No source above describes any specific employer's internal systems, tools, or practices. Where this case study references tools like "Workbench," "SharePoint," or "Excel-based tracking," those are described generically, consistent with widely reported industry patterns in the sources above — not as a specific employer's proprietary configuration.
 
 ## Data Notice

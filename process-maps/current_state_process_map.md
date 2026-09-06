@@ -51,4 +51,4 @@ The transaction itself moves through a fairly standard path (submit → quote �
 3. **Team- and region-level visibility requires manual work.** A manager assembling an outstanding-items view for regional leaders typically pulls data into Excel and distributes it — a snapshot that is stale the moment it's sent.
 4. **There is no shared definition of "what needs attention."** Aging, priority, and outstanding-item status are judgment calls made informally, not a consistent, visible standard.
 
-This is the gap Underwriter360 is designed to close — see the [Future-State Workflow](future_state_process_map.md).
+This is the gap ClearQueue is designed to close — see the [Future-State Workflow](future_state_process_map.md).

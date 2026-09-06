@@ -1,4 +1,4 @@
-# User Stories & Acceptance Criteria — Underwriter360
+# User Stories & Acceptance Criteria — ClearQueue
 
 Representative proposed user stories tied to the requirements in the [Requirements Matrix](requirements_matrix.md). Each maps to a specific pain point identified in the current-state workflow.
 
@@ -11,7 +11,7 @@ Representative proposed user stories tied to the requirements in the [Requiremen
 **So that** I can decide what to work on first without checking multiple systems or asking my UA
 
 **Acceptance Criteria**
-- Given I open Underwriter360, when the page loads, then I see only transactions where I am the underwriter of record.
+- Given I open ClearQueue, when the page loads, then I see only transactions where I am the underwriter of record.
 - Given a transaction is overdue against its target issuance date or has a hard blocker (e.g., an outstanding 4-point inspection), when I view my queue, then its Attention Score reflects that and it sorts near the top.
 - Given I want to focus on one line of business or region, when I apply a filter, then the queue updates without a page reload or manual re-export.
 - Given the data was last refreshed at a specific time, when I view the queue, then I can see that timestamp on screen.
@@ -109,12 +109,12 @@ Representative proposed user stories tied to the requirements in the [Requiremen
 
 ### US-06 — Any user: Trust that the data is current
 
-**As any** Underwriter360 user
+**As any** ClearQueue user
 **I want** to know when the data was last refreshed
 **So that** I can trust the view enough to act on it instead of double-checking with a person
 
 **Acceptance Criteria**
-- Given I open any view in Underwriter360, when the page loads, then a "last updated" timestamp is visible.
+- Given I open any view in ClearQueue, when the page loads, then a "last updated" timestamp is visible.
 - Given the refresh cadence is, for example, hourly, when more than one refresh cycle has passed without an update, then the tool visibly flags the data as stale rather than silently showing old data as current.
 
 *Related requirements: NFR-01*
